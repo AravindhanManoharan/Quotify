@@ -31,6 +31,26 @@ function RandomQuote(props){
  
     }
 
+    const handleLocalStorage=()=>{
+        let temp=JSON.parse(localStorage.getItem('quote'))
+        console.log('temp',temp)
+        if(temp){
+            
+            console.log('temp',temp)
+            let a=quote[0]
+            temp.push(a)
+            localStorage.setItem('quote',JSON.stringify(temp))
+
+        }else{
+            let b=[]
+            b.push(quote[0])
+            localStorage.setItem('quote',JSON.stringify(b))
+            
+        }
+    //    localStorage.setItem('quote',quote[0].quote)
+    //    localStorage.setItem('author',quote[0].character)
+    }
+
 //     const  handleClick=()=>{
         
 //    }
@@ -42,6 +62,7 @@ function RandomQuote(props){
            <QuoteCard quote={quote[0].quote } author={quote[0].character}></QuoteCard>
             }
             <button onClick={handleClick}>Get Another Quote</button>
+            <button onClick={handleLocalStorage}>Save</button>
         </div>
     )
 }
