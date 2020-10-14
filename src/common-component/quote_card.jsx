@@ -5,6 +5,8 @@ function QuoteCard(props) {
 
     return (
         <div>
+            
+            {console.log('card',props)}
             <Card>
                 <Card.Header>Quote</Card.Header>
                 <Card.Body>
@@ -12,12 +14,12 @@ function QuoteCard(props) {
                         <p>
                             {' '}
                             {/* to display the random generated quote use props.<quoteVariable> inside {} */}
-                            {'RANDOM QUOTE FETCHED FROM API'}
+                            {props.quote}
                             {' '}
                         </p>
                         <footer className="blockquote-footer">
                             {/* to display author of the quote displayed use props.<authorName> inside {} */}
-                            By <cite title="Source Title">{'Author Name'}</cite>
+                            By <cite title="Source Title">{props.author}</cite>
                         </footer>
                     </blockquote>
                 </Card.Body>

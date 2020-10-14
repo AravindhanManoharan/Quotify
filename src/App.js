@@ -4,16 +4,27 @@ import './App.css';
 import QuotifyHome from './home/quotify_home'
 import { Container } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
+import QuoteCard from '../src/common-component/quote_card'
+import RandomQuote from '../src/random/randomQuote'
 
 
 function App() {
   return (
     <div>
+    
+
+    <Router>
+    <QuotifyHome></QuotifyHome>
+    <div>
       <Container>
         <div class='containers'>
-          <QuotifyHome></QuotifyHome>
+          
+          <Route path='/randomQuote' component={RandomQuote} exact={true}/>
         </div>
       </Container>
+    </div>
+    </Router>
     </div>
 
 
