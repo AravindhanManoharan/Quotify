@@ -7,7 +7,7 @@ function QuoteCard(props) {
         <div>
             
             {console.log('card',props)}
-            <Card>
+            <Card border={props.color}>
                 <Card.Header>Quote</Card.Header>
                 <Card.Body>
                     <blockquote className="blockquote mb-0">
