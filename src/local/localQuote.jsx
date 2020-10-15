@@ -4,28 +4,28 @@ import Axios from 'axios'
 
 function LocalQuote() {
     const [quote, setQuote] = useState([])
-    const [author, setAuthor] = useState([])
+
+    useEffect(() => {
+        setQuote(JSON.parse(localStorage.getItem('quote')))
+    }, [])
 
     const handleClick = () => {
-     setQuote(localStorage.getItem('quote'))   ;
-     setAuthor(localStorage.getItem('author'))  ;
-
+        setQuote(JSON.parse(localStorage.getItem('quote')));
     }
 
+    let ind = Math.floor((quote.length ) * Math.random())
+    
     return (
         <div>
-            
-            
-            {quote.length >0 && 
-            <div>
-            <QuoteCard quote={quote} author={author}></QuoteCard>
-            
-            </div>
-           }
-           <button onClick={handleClick}>Get Another Local Quote</button>
-            
+            {quote.length > 0 &&
+                <p>
+                    <QuoteCard color='warning' quote={quote[ind].quote}
+                        author={quote[ind].character} >
+                    </QuoteCard>
+                </p>
+            }
+            <button onClick={handleClick}>Get Another Local Quote</button>
         </div>
     )
 }
-
 export default LocalQuote

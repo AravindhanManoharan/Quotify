@@ -59,7 +59,7 @@ function RandomQuote(props){
         <div>
 
             {quote.length>0 &&
-           <QuoteCard quote={quote[0].quote } author={quote[0].character}></QuoteCard>
+           <QuoteCard color='primary' quote={quote[0].quote } author={quote[0].character}></QuoteCard>
             }
             <button onClick={handleClick}>Get Another Quote</button>
             <button onClick={handleLocalStorage}>Save</button>
