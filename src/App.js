@@ -8,6 +8,8 @@ import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
 import QuoteCard from '../src/common-component/quote_card'
 import RandomQuote from '../src/random/randomQuote'
 import AllLocalQuotes from '../src/allLocalQuotes/allLocalQuotes'
+import LocalQuote from './local/localQuote';
+import AddQuote from '../src/addQuote/addQuote'
 
 
 function App() {
@@ -23,6 +25,8 @@ function App() {
           
           <Route path='/randomQuote' component={RandomQuote} exact={true}/>
           <Route path='/allLocalQuotes' component={AllLocalQuotes} exact={true}/>
+          <Route path='/localQuote' component={LocalQuote} exact={true}/>
+          <Route path='/addQuote' component={AddQuote} exact={true}></Route>
         </div>
       </Container>
     </div>
